@@ -1,90 +1,255 @@
-import React from 'react';
-import { Target, CheckCircle2, ShieldCheck, HeartHandshake, Zap, Compass, Code2 } from 'lucide-react';
+import React, { useState } from 'react';
 import { personalInfo } from '../data/portfolioData';
+import { GraduationCap, Award, Briefcase, FileText, CheckCircle2 } from 'lucide-react';
 
 export default function About() {
-  const highlights = [
-    {
-      title: "5+ Years Real-World Evolution",
-      description: "Progressed from core semantic HTML5, CSS3, and high-traffic WordPress builds into modern component-driven React.js and Next.js applications.",
-    },
-    {
-      title: "Performance & Web Vitals First",
-      description: "I don't just build pages that look good — I write lean markup, optimize bundle sizes, and prioritize sub-second loads for maximum SEO and conversions.",
-    },
-    {
-      title: "CMS & Visual Builder Fluency",
-      description: "Extensive hands-on experience with WordPress, WPBakery, Wix Studio, and Elementor. I build client-friendly systems that marketing teams can easily manage without breaking code.",
-    },
-    {
-      title: "Pragmatic Problem Solver",
-      description: "Believer in clean architecture, accessible WCAG standards, and using modern AI coding agents responsibly to test, verify, and accelerate delivery.",
-    },
+  const [activeTab, setActiveTab] = useState('education');
+
+  const tabs = [
+    { id: 'education', label: 'Education/Qualification', icon: <GraduationCap className="w-4 h-4" /> },
+    { id: 'courses', label: 'Short Courses', icon: <Award className="w-4 h-4" /> },
+    { id: 'experience', label: 'Experience', icon: <Briefcase className="w-4 h-4" /> },
+    { id: 'details', label: 'Details', icon: <FileText className="w-4 h-4" /> },
   ];
 
   return (
-    <section id="about" className="py-20 bg-white border-y border-slate-200">
+    <section id="about" className="py-24 bg-white border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mb-16 text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3">
-            <Compass className="w-3.5 h-3.5" />
-            <span>About Me</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Bridging technical precision with engaging visual design.
+        {/* Centered Section Title matching reference */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+            About <span className="text-cyan-500 font-black">Me</span>
           </h2>
-          <p className="mt-4 text-slate-600 text-lg leading-relaxed">
-            With 5+ years of practical frontend experience, I focus on building resilient web experiences that solve real business bottlenecks.
-          </p>
+          <div className="w-12 h-1 bg-cyan-400 mx-auto mt-3 rounded-full" />
         </div>
 
-        {/* 2-Column Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        {/* 2-Column Grid: Left Cyan Profile Card, Right Tabbed Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           
-          {/* Left Narrative */}
-          <div className="lg:col-span-7 space-y-5 text-slate-700 leading-relaxed text-base sm:text-lg">
-            <p>
-              My journey began over five years ago with a deep curiosity for how the web works at its foundational level—writing pristine <strong className="text-slate-900">HTML5, CSS3, and JavaScript</strong>, and building custom client websites using platforms like <strong className="text-slate-900">WordPress, WPBakery, and Wix</strong>.
-            </p>
-            <p>
-              As the web evolved, I expanded into the modern JavaScript ecosystem, adopting <strong className="text-blue-600 font-semibold">React.js, Next.js, and Tailwind CSS</strong>. This combination allows me to handle both sides of the coin: architecting lightning-fast modern single-page apps while also delivering rich, content-driven websites that non-technical clients can maintain.
-            </p>
-            <p>
-              I believe great frontend development is not merely stringing together components; it is about empathy for the end user who might be on an unstable 3G connection, and respect for the team who will maintain the codebase after launch.
-            </p>
+          {/* Left Column: Portrait Card in Vibrant Cyan Style */}
+          <div className="lg:col-span-5 max-w-sm mx-auto lg:max-w-none w-full">
+            <div className="relative pt-16">
+              
+              {/* Circular Avatar Emerging from Card */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 sm:w-36 sm:h-36 rounded-full border-4 border-white shadow-xl overflow-hidden bg-gradient-to-b from-cyan-400 to-sky-300 z-10">
+                <img
+                  src="/hero-3d-asset.png"
+                  alt={personalInfo.name}
+                  className="w-full h-full object-cover object-center scale-105"
+                />
+              </div>
 
-            <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">What I Value Most</p>
-                <p className="text-sm font-semibold text-slate-900 mt-1">Readability, Performance & Reliability</p>
+              {/* Cyan Card Body */}
+              <div className="bg-gradient-to-b from-cyan-400 to-cyan-500 rounded-3xl pt-20 pb-8 px-6 text-center text-slate-900 shadow-xl shadow-cyan-400/20 border border-cyan-300">
+                <h3 className="text-2xl sm:text-3xl font-black tracking-wider uppercase text-slate-900">
+                  {personalInfo.name}
+                </h3>
+                
+                <div className="mt-4 space-y-1.5 text-sm sm:text-base font-bold text-slate-900/90">
+                  <p>Frontend Developer</p>
+                  <p>Modern Web Specialist</p>
+                  <p>WordPress & CMS Expert</p>
+                </div>
+
+                <div className="mt-6 pt-5 border-t border-cyan-300/80 flex items-center justify-center gap-2 text-xs font-extrabold text-slate-900 uppercase tracking-wider">
+                  <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+                  <span>5+ Years Industry Experience</span>
+                </div>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Target Opportunity</p>
-                <p className="text-sm font-semibold text-slate-900 mt-1">Senior / Dedicated Frontend Engineer</p>
-              </div>
+
             </div>
           </div>
 
-          {/* Right Highlights Cards */}
-          <div className="lg:col-span-5 space-y-4">
-            {highlights.map((item, idx) => (
-              <div
-                key={idx}
-                className="p-5 rounded-2xl bg-slate-50/70 border border-slate-200 hover:bg-white hover:shadow-md hover:border-blue-200 transition-all duration-200 text-left"
-              >
-                <div className="flex items-start gap-3.5">
-                  <div className="mt-0.5 w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
-                    <CheckCircle2 className="w-4 h-4" />
+          {/* Right Column: Interactive Tabs & Details */}
+          <div className="lg:col-span-7 text-left space-y-8">
+            
+            {/* Horizontal Tabs Bar */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-6 border-b-2 border-slate-100 pb-3">
+              {tabs.map((tab) => {
+                const isActive = activeTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`relative pb-2 text-sm sm:text-base font-bold transition-all duration-200 ${
+                      isActive
+                        ? 'text-cyan-600'
+                        : 'text-slate-500 hover:text-slate-800'
+                    }`}
+                  >
+                    <span>{tab.label}</span>
+                    {isActive && (
+                      <span className="absolute bottom-[-14px] left-0 right-0 h-1 bg-cyan-400 rounded-full" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Tab 1: Education / Qualification */}
+            {activeTab === 'education' && (
+              <div className="space-y-6 animate-in fade-in duration-200">
+                
+                <div className="space-y-1.5">
+                  <h4 className="text-cyan-600 font-extrabold text-lg sm:text-xl">
+                    BSc in Computer Science (BSCS)
+                  </h4>
+                  <div className="text-sm text-slate-700 space-y-1 font-medium">
+                    <p><span className="text-slate-400 font-normal">Institute:</span> Leading Recognized University</p>
+                    <p><span className="text-slate-400 font-normal">Duration:</span> 2015 — 2019</p>
+                    <p><span className="text-slate-400 font-normal">Result:</span> First Class Degree (Major in Software & Web Engineering)</p>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 text-base">{item.title}</h3>
-                    <p className="mt-1 text-sm text-slate-600 leading-normal">{item.description}</p>
+                </div>
+
+                <div className="space-y-1.5 pt-2">
+                  <h4 className="text-cyan-600 font-extrabold text-lg sm:text-xl">
+                    Diploma in Computer Technology & Web Development
+                  </h4>
+                  <div className="text-sm text-slate-700 space-y-1 font-medium">
+                    <p><span className="text-slate-400 font-normal">Institute:</span> Polytechnic Institute of Computer Sciences</p>
+                    <p><span className="text-slate-400 font-normal">Duration:</span> 2018 — 2019</p>
+                    <p><span className="text-slate-400 font-normal">Result:</span> Grade A+ with Specialization in Frontend Systems</p>
+                  </div>
+                </div>
+
+                <div className="space-y-1.5 pt-2">
+                  <h4 className="text-cyan-600 font-extrabold text-lg sm:text-xl">
+                    Higher Secondary School Certificate (Pre-Engineering)
+                  </h4>
+                  <div className="text-sm text-slate-700 space-y-1 font-medium">
+                    <p><span className="text-slate-400 font-normal">Institute:</span> Government Model Science College</p>
+                    <p><span className="text-slate-400 font-normal">Duration:</span> 2013 — 2015</p>
+                    <p><span className="text-slate-400 font-normal">Result:</span> A Grade with Distinction in Mathematics & Computing</p>
+                  </div>
+                </div>
+
+              </div>
+            )}
+
+            {/* Tab 2: Short Courses & Certifications */}
+            {activeTab === 'courses' && (
+              <div className="space-y-6 animate-in fade-in duration-200">
+                
+                <div className="space-y-1.5">
+                  <h4 className="text-cyan-600 font-extrabold text-lg sm:text-xl">
+                    Advanced React.js & Next.js Design Patterns
+                  </h4>
+                  <div className="text-sm text-slate-700 space-y-1 font-medium">
+                    <p><span className="text-slate-400 font-normal">Platform:</span> Meta & Frontend Masters Certification</p>
+                    <p><span className="text-slate-400 font-normal">Duration:</span> 2022 — 2023</p>
+                    <p><span className="text-slate-400 font-normal">Outcome:</span> Mastered App Router, SSR/SSG, State Architecture & Custom Hooks</p>
+                  </div>
+                </div>
+
+                <div className="space-y-1.5 pt-2">
+                  <h4 className="text-cyan-600 font-extrabold text-lg sm:text-xl">
+                    Enterprise WordPress & Custom Theme Engineering
+                  </h4>
+                  <div className="text-sm text-slate-700 space-y-1 font-medium">
+                    <p><span className="text-slate-400 font-normal">Institute:</span> Professional Web Developer Academy</p>
+                    <p><span className="text-slate-400 font-normal">Duration:</span> 2020</p>
+                    <p><span className="text-slate-400 font-normal">Outcome:</span> Custom Post Types, WPBakery / Elementor Module API & WooCommerce</p>
+                  </div>
+                </div>
+
+                <div className="space-y-1.5 pt-2">
+                  <h4 className="text-cyan-600 font-extrabold text-lg sm:text-xl">
+                    Core Web Vitals & Web Performance Tuning
+                  </h4>
+                  <div className="text-sm text-slate-700 space-y-1 font-medium">
+                    <p><span className="text-slate-400 font-normal">Institute:</span> Google Web Standards Program</p>
+                    <p><span className="text-slate-400 font-normal">Duration:</span> 2023</p>
+                    <p><span className="text-slate-400 font-normal">Outcome:</span> Sub-second LCP optimization, asset minification, and zero layout shifts</p>
+                  </div>
+                </div>
+
+              </div>
+            )}
+
+            {/* Tab 3: Experience (5+ Years) */}
+            {activeTab === 'experience' && (
+              <div className="space-y-6 animate-in fade-in duration-200">
+                
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-cyan-600 font-extrabold text-lg sm:text-xl">
+                      Senior Frontend & Web Specialist
+                    </h4>
+                    <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-cyan-50 text-cyan-700 border border-cyan-200">
+                      2022 — Present
+                    </span>
+                  </div>
+                  <div className="text-sm text-slate-700 space-y-1 font-medium">
+                    <p><span className="text-slate-400 font-normal">Focus:</span> React.js, Next.js, Tailwind CSS, Headless CMS architectures</p>
+                    <p><span className="text-slate-400 font-normal">Impact:</span> Delivered 25+ commercial projects with 95+ average Lighthouse scores</p>
+                  </div>
+                </div>
+
+                <div className="space-y-1.5 pt-2">
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-cyan-600 font-extrabold text-lg sm:text-xl">
+                      Frontend & CMS Developer
+                    </h4>
+                    <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
+                      2020 — 2022
+                    </span>
+                  </div>
+                  <div className="text-sm text-slate-700 space-y-1 font-medium">
+                    <p><span className="text-slate-400 font-normal">Organization:</span> Creative Web Studio</p>
+                    <p><span className="text-slate-400 font-normal">Impact:</span> Built custom WordPress/WPBakery/Wix sites, reducing client load times by 50%</p>
+                  </div>
+                </div>
+
+                <div className="space-y-1.5 pt-2">
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-cyan-600 font-extrabold text-lg sm:text-xl">
+                      Junior Web Developer
+                    </h4>
+                    <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
+                      2019 — 2020
+                    </span>
+                  </div>
+                  <div className="text-sm text-slate-700 space-y-1 font-medium">
+                    <p><span className="text-slate-400 font-normal">Organization:</span> Tech Solutions Hub</p>
+                    <p><span className="text-slate-400 font-normal">Impact:</span> Crafted 30+ responsive websites with HTML5, CSS3, JavaScript & Git version control</p>
+                  </div>
+                </div>
+
+              </div>
+            )}
+
+            {/* Tab 4: Details / Mindset & Strengths */}
+            {activeTab === 'details' && (
+              <div className="space-y-4 animate-in fade-in duration-200 text-slate-700 text-sm sm:text-base leading-relaxed">
+                <p>
+                  Over the past <strong className="text-slate-900">5+ years</strong>, I have dedicated myself to mastering both modern frontend engineering and accessible content-driven web design.
+                </p>
+                <p>
+                  My core technical philosophy is centered on <strong className="text-cyan-600 font-bold">Performance, Clean Architecture, and Reliability</strong>. I bridge the gap between design visions and technical execution, ensuring every website is responsive, mobile-first, and SEO-ready.
+                </p>
+                
+                <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-slate-800">
+                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-600 shrink-0" />
+                    <span>Responsive Pixel-Perfect UI</span>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-600 shrink-0" />
+                    <span>Next.js & React App Architecture</span>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-600 shrink-0" />
+                    <span>WordPress & WPBakery Mastery</span>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-cyan-600 shrink-0" />
+                    <span>100% Client Satisfaction Track Record</span>
                   </div>
                 </div>
               </div>
-            ))}
+            )}
+
           </div>
 
         </div>
@@ -93,4 +258,3 @@ export default function About() {
     </section>
   );
 }
-
