@@ -168,11 +168,13 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Modal display when a project is selected */}
-        <ProjectModal
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
+        {/* Modal display only when a project is selected */}
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
 
       </div>
     </section>
