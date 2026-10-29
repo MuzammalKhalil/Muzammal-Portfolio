@@ -217,3 +217,4 @@ export const educationData = [
     details: "Advanced React & Next.js Design Patterns, Modern JavaScript Deep Dive, Core Web Vitals & Web Performance Optimization."
   }
 ];
+

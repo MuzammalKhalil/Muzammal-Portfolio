@@ -1,182 +1,180 @@
 import React from 'react';
-import { ArrowRight, Eye, Sparkles, CheckCircle2, Code, Zap, Award, Layers, Download } from 'lucide-react';
+import { Mail, Globe, Sparkles, ArrowRight, ExternalLink } from 'lucide-react';
+import { FacebookIcon, LinkedinIcon, TwitterIcon, GithubIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Hero() {
-  const quickTechs = [
-    'React.js',
-    'Next.js 14',
-    'JavaScript (ES6+)',
-    'Tailwind CSS',
-    'WordPress',
-    'Wix Studio',
-    'WPBakery',
-  ];
-
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-      {/* Background Subtle Gradient Blobs (Light theme compliant) */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-gradient-to-tr from-blue-100/60 via-indigo-50/40 to-emerald-50/30 rounded-full blur-3xl -z-10 pointer-events-none" />
-      <div className="absolute top-10 right-10 w-72 h-72 bg-blue-50/50 rounded-full blur-2xl -z-10 pointer-events-none" />
+    <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-24 md:pt-36 md:pb-32 overflow-hidden bg-gradient-to-b from-slate-50 via-sky-50/20 to-slate-100">
+      
+      {/* Mountain Landscape Background Silhouette (Light Theme Interpretation) */}
+      <div className="absolute inset-x-0 bottom-0 pointer-events-none z-0 opacity-70">
+        <svg
+          viewBox="0 0 1440 380"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-auto object-cover object-bottom"
+          preserveAspectRatio="none"
+        >
+          {/* Distant Mountains */}
+          <path
+            d="M0 240L140 180L280 230L440 140L580 210L720 120L880 220L1020 150L1160 210L1300 130L1440 220V380H0V240Z"
+            fill="#E2E8F0"
+            fillOpacity="0.45"
+          />
+          {/* Midground Mountain Peaks */}
+          <path
+            d="M0 270L160 210L320 260L480 180L620 250L760 160L920 250L1080 190L1220 260L1360 170L1440 240V380H0V270Z"
+            fill="#CBD5E1"
+            fillOpacity="0.55"
+          />
+          {/* Foreground Sharp Ridges */}
+          <path
+            d="M0 310L180 250L360 300L540 220L700 290L860 210L1020 280L1180 230L1320 290L1440 250V380H0V310Z"
+            fill="#94A3B8"
+            fillOpacity="0.35"
+          />
+        </svg>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Atmospheric Mist Gradient Overlay */}
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-100 via-slate-100/60 to-transparent pointer-events-none z-0" />
+
+      {/* Main Content Container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Heading, Value Proposition & Actions */}
+          {/* Left Column: Heading, Subtitle, Description, Socials & Buttons */}
           <div className="lg:col-span-7 text-left space-y-6">
             
-            {/* Status Pill & Experience Badge */}
-            <div className="inline-flex flex-wrap items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/70 text-blue-800 text-xs sm:text-sm font-semibold shadow-sm">
-              <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>5+ Years Experience</span>
-              <span className="text-blue-300">•</span>
-              <span className="text-blue-700">{personalInfo.status}</span>
-            </div>
-
-            {/* Main Title & Role */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.12]">
-              Hi, I'm <span className="text-blue-600 inline-block">{personalInfo.name}</span>.
-              <br />
-              <span className="text-slate-800 text-3xl sm:text-4xl lg:text-5xl font-bold">
-                Senior Frontend & Modern Web Developer
-              </span>
+            {/* Main Name in Bold Uppercase */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-wider uppercase font-sans">
+              {personalInfo.name.toUpperCase()}
             </h1>
 
-            {/* Value Proposition */}
-            <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl font-normal">
-              I transform complex business goals into <strong className="text-slate-800 font-semibold">fast, responsive, and pixel-perfect web experiences</strong>. 
-              Specializing in high-performance <span className="text-blue-600 font-medium">React & Next.js</span> applications, custom <span className="text-blue-600 font-medium">WordPress & CMS</span> solutions, and clean accessible design systems.
+            {/* Subtitle with Cyan Highlight */}
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-800 tracking-tight">
+              And I'm a <span className="text-cyan-500 font-black tracking-wide inline-block">Frontend Developer</span>
+            </h2>
+
+            {/* Concise Value & Experience Paragraph */}
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
+              I'm a professional web developer with strong skills in HTML, CSS, JavaScript, Tailwind, React, Next.js & WordPress. I have been working in this field for almost 5 years, and all of my projects are completed successfully with 100% client satisfaction.
             </p>
 
-            {/* CTAs */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            {/* Social Media Circular Icon Buttons */}
+            <div className="flex items-center gap-3 pt-2">
+              {/* Facebook */}
               <a
-                href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base shadow-sm hover:shadow-md hover:shadow-blue-500/25 transition-all duration-200 active:scale-95"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook Profile"
+                className="w-10 h-10 rounded-full border-2 border-cyan-400 bg-white/80 backdrop-blur-xs text-cyan-600 hover:bg-cyan-500 hover:text-white hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/30 flex items-center justify-center transition-all duration-200 active:scale-95"
               >
-                <span>View Selected Work</span>
-                <ArrowRight className="w-5 h-5" />
+                <FacebookIcon className="w-4 h-4 fill-current" />
               </a>
 
+              {/* LinkedIn */}
               <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-semibold text-base border border-slate-300 shadow-xs hover:border-slate-400 transition-all duration-200"
+                href={personalInfo.socials.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                className="w-10 h-10 rounded-full border-2 border-cyan-400 bg-white/80 backdrop-blur-xs text-cyan-600 hover:bg-cyan-500 hover:text-white hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/30 flex items-center justify-center transition-all duration-200 active:scale-95"
               >
-                <span>Get in Touch</span>
+                <LinkedinIcon className="w-4 h-4 fill-current" />
               </a>
 
+              {/* GitHub / Twitter */}
               <a
-                href="#experience"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-slate-600 hover:text-blue-600 font-medium text-sm transition-colors"
-                title="View career timeline and qualifications"
+                href={personalInfo.socials.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+                className="w-10 h-10 rounded-full border-2 border-cyan-400 bg-white/80 backdrop-blur-xs text-cyan-600 hover:bg-cyan-500 hover:text-white hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/30 flex items-center justify-center transition-all duration-200 active:scale-95"
               >
-                <Download className="w-4 h-4" />
-                <span>View CV / Milestones</span>
+                <GithubIcon className="w-4 h-4" />
+              </a>
+
+              {/* Mail */}
+              <a
+                href={`mailto:${personalInfo.email}`}
+                aria-label="Direct Email"
+                className="w-10 h-10 rounded-full border-2 border-cyan-400 bg-white/80 backdrop-blur-xs text-cyan-600 hover:bg-cyan-500 hover:text-white hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/30 flex items-center justify-center transition-all duration-200 active:scale-95"
+              >
+                <Mail className="w-4 h-4" />
               </a>
             </div>
 
-            {/* Quick Skills Pills */}
-            <div className="pt-4 border-t border-slate-200/80">
-              <span className="text-xs uppercase tracking-wider font-bold text-slate-500 block mb-2.5">
-                Primary Stack & Expertise:
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {quickTechs.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 text-xs font-medium shadow-2xs hover:border-blue-300 hover:text-blue-600 transition-colors"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+            {/* Pill CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-4 pt-4">
+              {/* Primary Pill Button: About Myself / View Work */}
+              <a
+                href="#about"
+                className="px-7 py-3 rounded-full bg-cyan-400 hover:bg-cyan-500 text-slate-900 font-bold text-sm tracking-wide shadow-md shadow-cyan-400/30 hover:shadow-lg hover:shadow-cyan-500/40 transition-all duration-200 active:scale-95"
+              >
+                About Myself
+              </a>
+
+              {/* Secondary Pill Button: Hire Me */}
+              <a
+                href="#contact"
+                className="px-7 py-3 rounded-full bg-cyan-400 hover:bg-cyan-500 text-slate-900 font-bold text-sm tracking-wide shadow-md shadow-cyan-400/30 hover:shadow-lg hover:shadow-cyan-500/40 transition-all duration-200 active:scale-95"
+              >
+                Hire Me
+              </a>
             </div>
 
           </div>
 
-          {/* Right Column: Visual Showcase & Metric Highlights */}
-          <div className="lg:col-span-5">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+          {/* Right Column: Hexagonal Framed Portrait */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative group">
               
-              {/* Main Profile / Credibility Card */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl shadow-slate-200/60 border border-slate-200 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-0" />
-                
-                {/* Header of the Card */}
-                <div className="flex items-center gap-4 relative z-10 mb-6 pb-6 border-b border-slate-100">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center font-bold text-2xl shadow-md shadow-blue-500/20">
-                    M
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900 text-xl">{personalInfo.name}</h3>
-                    <p className="text-sm text-slate-500 font-medium">5+ Years Crafting the Web</p>
-                    <div className="flex items-center gap-1.5 mt-1 text-emerald-600 text-xs font-semibold">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
-                      <span>Verified Frontend Specialist</span>
-                    </div>
+              {/* Outer Hexagon with Vibrant Cyan Glow */}
+              <div
+                className="w-[280px] h-[320px] sm:w-[320px] sm:h-[370px] transition-transform duration-500 group-hover:scale-105"
+                style={{
+                  filter: 'drop-shadow(0 0 25px rgba(6, 182, 212, 0.65)) drop-shadow(0 15px 30px rgba(6, 182, 212, 0.35))',
+                }}
+              >
+                {/* Outer Cyan Border Hexagon */}
+                <div
+                  className="w-full h-full bg-gradient-to-b from-cyan-300 via-cyan-400 to-cyan-500 p-[5px]"
+                  style={{
+                    clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+                  }}
+                >
+                  {/* Inner Hexagon Container with Cyan Gradient & Developer Photo */}
+                  <div
+                    className="w-full h-full bg-gradient-to-b from-cyan-400 via-sky-300 to-cyan-500 relative overflow-hidden flex items-end justify-center"
+                    style={{
+                      clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+                    }}
+                  >
+                    {/* Portrait Photo inside Hexagon */}
+                    <img
+                      src="/hero-portrait.png"
+                      alt={personalInfo.name}
+                      onError={(e) => {
+                        // Fallback if hero-portrait is loading
+                        e.target.onerror = null;
+                        e.target.src = '/cropped-portrait.png';
+                      }}
+                      className="w-full h-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-500"
+                    />
+
+                    {/* Subtle Bottom Vignette */}
+                    <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-cyan-600/40 to-transparent pointer-events-none" />
                   </div>
                 </div>
+              </div>
 
-                {/* Key Metrics Grid */}
-                <div className="grid grid-cols-2 gap-4 relative z-10">
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                    <div className="flex items-center gap-2 text-blue-600 mb-1">
-                      <Award className="w-5 h-5" />
-                      <span className="text-2xl font-extrabold text-slate-900">5+</span>
-                    </div>
-                    <p className="text-xs font-semibold text-slate-600 uppercase tracking-wide">
-                      Years Industry Exp
-                    </p>
-                    <p className="text-[11px] text-slate-600 mt-0.5">Frontend, React & CMS</p>
-                  </div>
-
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                    <div className="flex items-center gap-2 text-emerald-600 mb-1">
-                      <Zap className="w-5 h-5" />
-                      <span className="text-2xl font-extrabold text-slate-900">45+</span>
-                    </div>
-                    <p className="text-xs font-semibold text-slate-600 uppercase tracking-wide">
-                      Projects Delivered
-                    </p>
-                    <p className="text-[11px] text-slate-600 mt-0.5">Production-grade builds</p>
-                  </div>
-
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                    <div className="flex items-center gap-2 text-indigo-600 mb-1">
-                      <Code className="w-5 h-5" />
-                      <span className="text-2xl font-extrabold text-slate-900">98%</span>
-                    </div>
-                    <p className="text-xs font-semibold text-slate-600 uppercase tracking-wide">
-                      Lighthouse Score
-                    </p>
-                    <p className="text-[11px] text-slate-600 mt-0.5">Optimized Core Web Vitals</p>
-                  </div>
-
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                    <div className="flex items-center gap-2 text-amber-600 mb-1">
-                      <Layers className="w-5 h-5" />
-                      <span className="text-2xl font-extrabold text-slate-900">100%</span>
-                    </div>
-                    <p className="text-xs font-semibold text-slate-600 uppercase tracking-wide">
-                      Responsive Design
-                    </p>
-                    <p className="text-[11px] text-slate-600 mt-0.5">Mobile, Tablet, Desktop</p>
-                  </div>
-                </div>
-
-                {/* Guiding Philosophy Callout */}
-                <div className="mt-6 p-4 rounded-2xl bg-blue-50/70 border border-blue-100 text-left">
-                  <div className="flex items-start gap-3">
-                    <Sparkles className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
-                    <div>
-                      <p className="text-xs font-bold text-blue-900 uppercase tracking-wider">Hiring Goal</p>
-                      <p className="text-xs text-blue-800 mt-0.5 leading-relaxed">
-                        Ready to contribute immediately to product teams requiring reliable, scalable React/Next.js code and high-converting web applications.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
+              {/* Floating Verified Badge */}
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-cyan-200 shadow-md flex items-center gap-2 text-xs font-bold text-slate-800">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>5+ Years Experience • 100% Satisfaction</span>
               </div>
 
             </div>

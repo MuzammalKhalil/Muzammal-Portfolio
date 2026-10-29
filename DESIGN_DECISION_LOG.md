@@ -80,3 +80,4 @@
 
 ### 10. Final Reflection
 * **Next Improvements:** If given another half-day, I would integrate real-time automated contact emailing via EmailJS / Resend API, connect a headless CMS (like Sanity or Strapi) for real-time dynamic project updates, and implement lightweight PageSpeed analytics tracking.
+
