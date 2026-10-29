@@ -1,13 +1,13 @@
 import React from 'react';
-import { Mail, Globe, Sparkles, ArrowRight, ExternalLink } from 'lucide-react';
-import { FacebookIcon, LinkedinIcon, TwitterIcon, GithubIcon } from './Icons';
+import { Mail, Sparkles, Code2, Layers, Cpu } from 'lucide-react';
+import { FacebookIcon, LinkedinIcon, GithubIcon } from './Icons';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-24 md:pt-36 md:pb-32 overflow-hidden bg-gradient-to-b from-slate-50 via-sky-50/20 to-slate-100">
+    <section id="home" className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-24 md:pt-36 md:pb-32 overflow-hidden bg-gradient-to-b from-slate-50 via-sky-50/25 to-slate-100">
       
-      {/* Mountain Landscape Background Silhouette (Light Theme Interpretation) */}
+      {/* Mountain Landscape Background Silhouette (Light Theme Mandate) */}
       <div className="absolute inset-x-0 bottom-0 pointer-events-none z-0 opacity-70">
         <svg
           viewBox="0 0 1440 380"
@@ -86,7 +86,7 @@ export default function Hero() {
                 <LinkedinIcon className="w-4 h-4 fill-current" />
               </a>
 
-              {/* GitHub / Twitter */}
+              {/* GitHub */}
               <a
                 href={personalInfo.socials.github}
                 target="_blank"
@@ -109,7 +109,7 @@ export default function Hero() {
 
             {/* Pill CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4">
-              {/* Primary Pill Button: About Myself / View Work */}
+              {/* Primary Pill Button: About Myself */}
               <a
                 href="#about"
                 className="px-7 py-3 rounded-full bg-cyan-400 hover:bg-cyan-500 text-slate-900 font-bold text-sm tracking-wide shadow-md shadow-cyan-400/30 hover:shadow-lg hover:shadow-cyan-500/40 transition-all duration-200 active:scale-95"
@@ -128,16 +128,29 @@ export default function Hero() {
 
           </div>
 
-          {/* Right Column: Hexagonal Framed Portrait */}
+          {/* Right Column: 3D Developer Character in Glowing Hexagon */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative group">
               
-              {/* Outer Hexagon with Vibrant Cyan Glow */}
+              {/* Floating 3D Tech Badges Orbiting Around Hexagon */}
+              <div className="absolute -top-4 -left-6 z-20 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-2xl border border-cyan-200 shadow-lg shadow-cyan-500/10 flex items-center gap-2 text-xs font-bold text-slate-800 animate-float">
+                <span className="p-1 rounded-lg bg-blue-50 text-blue-600">⚛️</span>
+                <span>React & Next.js</span>
+              </div>
+
+              <div className="absolute -top-2 -right-4 z-20 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-2xl border border-cyan-200 shadow-lg shadow-cyan-500/10 flex items-center gap-2 text-xs font-bold text-slate-800 animate-float-reverse">
+                <span className="p-1 rounded-lg bg-cyan-50 text-cyan-600">🎨</span>
+                <span>Tailwind 3D</span>
+              </div>
+
+              <div className="absolute top-1/2 -left-10 z-20 hidden sm:flex bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-2xl border border-cyan-200 shadow-lg shadow-cyan-500/10 items-center gap-2 text-xs font-bold text-slate-800 animate-float">
+                <span className="p-1 rounded-lg bg-amber-50 text-amber-600">⚡</span>
+                <span>5+ Yrs Exp</span>
+              </div>
+
+              {/* Outer Glowing Hexagon Frame */}
               <div
-                className="w-[280px] h-[320px] sm:w-[320px] sm:h-[370px] transition-transform duration-500 group-hover:scale-105"
-                style={{
-                  filter: 'drop-shadow(0 0 25px rgba(6, 182, 212, 0.65)) drop-shadow(0 15px 30px rgba(6, 182, 212, 0.35))',
-                }}
+                className="w-[280px] h-[320px] sm:w-[330px] sm:h-[380px] animate-pulse-glow transition-transform duration-500 group-hover:scale-105"
               >
                 {/* Outer Cyan Border Hexagon */}
                 <div
@@ -146,33 +159,28 @@ export default function Hero() {
                     clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
                   }}
                 >
-                  {/* Inner Hexagon Container with Cyan Gradient & Developer Photo */}
+                  {/* Inner Hexagon Container with 3D Character Asset */}
                   <div
-                    className="w-full h-full bg-gradient-to-b from-cyan-400 via-sky-300 to-cyan-500 relative overflow-hidden flex items-end justify-center"
+                    className="w-full h-full bg-gradient-to-b from-cyan-400 via-sky-300 to-cyan-500 relative overflow-hidden flex items-center justify-center"
                     style={{
                       clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
                     }}
                   >
-                    {/* Portrait Photo inside Hexagon */}
+                    {/* 3D Developer Asset (1024x1024 Ultra Sharp) */}
                     <img
-                      src="/hero-portrait.png"
-                      alt={personalInfo.name}
-                      onError={(e) => {
-                        // Fallback if hero-portrait is loading
-                        e.target.onerror = null;
-                        e.target.src = '/cropped-portrait.png';
-                      }}
-                      className="w-full h-full object-cover object-top scale-105 group-hover:scale-110 transition-transform duration-500"
+                      src="/hero-3d-asset.png"
+                      alt="3D Developer Asset"
+                      className="w-full h-full object-cover object-center scale-110 group-hover:scale-115 transition-transform duration-500"
                     />
 
-                    {/* Subtle Bottom Vignette */}
-                    <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-cyan-600/40 to-transparent pointer-events-none" />
+                    {/* Ambient Light Reflection */}
+                    <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-cyan-600/30 to-transparent pointer-events-none" />
                   </div>
                 </div>
               </div>
 
-              {/* Floating Verified Badge */}
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-cyan-200 shadow-md flex items-center gap-2 text-xs font-bold text-slate-800">
+              {/* Floating Verified Badge at Bottom */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-cyan-200 shadow-md flex items-center gap-2 text-xs font-bold text-slate-800 whitespace-nowrap z-20">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span>5+ Years Experience • 100% Satisfaction</span>
               </div>
