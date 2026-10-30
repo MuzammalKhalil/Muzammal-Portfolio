@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, Code2, Briefcase } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Navbar() {
@@ -32,12 +32,13 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'How I Work', href: '#process' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'HOME', href: '#home' },
+    { label: 'ABOUT', href: '#about' },
+    { label: 'SKILLS', href: '#skills' },
+    { label: 'PROJECTS', href: '#projects' },
+    { label: 'HOW I WORK', href: '#process' },
+    { label: 'EXPERIENCE', href: '#experience' },
+    { label: 'CONTACT', href: '#contact' },
   ];
 
   const handleLinkClick = () => {
@@ -48,43 +49,35 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-3.5'
-          : 'bg-transparent py-5'
+          ? 'bg-white/90 backdrop-blur-md border-b border-slate-200/80 py-4 shadow-xs'
+          : 'bg-white/60 backdrop-blur-xs py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo / Brand */}
+          
+          {/* Left Brand: Clean, Minimalist Typography Logo (matching reference) */}
           <a
             href="#home"
-            className="flex items-center gap-2.5 text-slate-900 group"
+            className="flex items-center text-slate-900 group"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-cyan-400 text-slate-900 flex items-center justify-center font-black shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-              <Code2 className="w-5 h-5 text-slate-900" />
-            </div>
-            <div>
-              <span className="font-black text-lg tracking-tight text-slate-900 block leading-tight">
-                {personalInfo.name}
-                <span className="text-cyan-500">.dev</span>
-              </span>
-              <span className="text-[11px] font-bold text-slate-500 block -mt-0.5 uppercase tracking-wider">
-                Frontend Specialist
-              </span>
-            </div>
+            <span className="font-black text-2xl tracking-tighter text-slate-950 font-sans">
+              MUZAMMAL<span className="text-cyan-500 font-black">.</span>
+            </span>
           </a>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-1 bg-slate-100/90 p-1.5 rounded-full border border-slate-200">
+          {/* Center: Sleek Capsule Navigation Container (matching reference) */}
+          <nav className="hidden lg:flex items-center gap-1.5 bg-slate-100/90 p-1 rounded-full border border-slate-200/90 shadow-2xs">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
                 <a
                   key={link.label}
                   href={link.href}
-                  className={`px-3.5 py-1.5 text-sm font-bold rounded-full transition-all duration-200 ${
+                  className={`px-4 py-1.5 text-xs font-black tracking-wider rounded-full transition-all duration-200 ${
                     isActive
-                      ? 'bg-white text-cyan-600 shadow-sm'
-                      : 'text-slate-600 hover:text-cyan-600 hover:bg-slate-200/50'
+                      ? 'bg-white text-slate-950 shadow-xs'
+                      : 'text-slate-600 hover:text-cyan-600'
                   }`}
                 >
                   {link.label}
@@ -93,36 +86,36 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* CTA & Mobile Toggle */}
+          {/* Right Action: Editorial Pill Button (matching reference) */}
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-cyan-400 hover:bg-cyan-500 text-slate-900 text-sm font-black shadow-md shadow-cyan-400/25 hover:shadow-lg hover:shadow-cyan-400/40 transition-all duration-200 active:scale-95"
+              className="hidden sm:inline-flex items-center justify-center px-7 py-2.5 rounded-full bg-slate-950 hover:bg-cyan-400 hover:text-slate-950 text-white text-xs font-black tracking-wider uppercase transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-cyan-400/20 active:scale-95"
             >
-              <span>Hire Me</span>
-              <ArrowRight className="w-4 h-4" />
+              HIRE ME
             </a>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-xl text-slate-700 hover:text-cyan-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              className="lg:hidden p-2 rounded-xl text-slate-800 hover:text-cyan-600 hover:bg-slate-100 focus:outline-none"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
+
         </div>
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-3 pt-3 pb-4 px-3 bg-white rounded-2xl border border-slate-200 shadow-xl space-y-1 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="lg:hidden mt-3 pt-3 pb-4 px-3 bg-white rounded-2xl border border-slate-200 shadow-xl space-y-1 animate-in fade-in slide-in-from-top-2 duration-200 text-left">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="block px-4 py-2.5 rounded-xl text-sm font-bold text-slate-700 hover:text-cyan-600 hover:bg-cyan-50/70 transition-colors"
+                className="block px-4 py-2.5 rounded-xl text-xs font-black tracking-wider text-slate-700 hover:text-cyan-600 hover:bg-slate-50 transition-colors"
               >
                 {link.label}
               </a>
@@ -131,14 +124,14 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={handleLinkClick}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-cyan-400 hover:bg-cyan-500 text-slate-900 text-sm font-black shadow-md shadow-cyan-400/25 transition-colors"
+                className="w-full flex items-center justify-center px-4 py-3 rounded-full bg-slate-950 hover:bg-cyan-400 hover:text-slate-950 text-white text-xs font-black tracking-wider uppercase shadow-sm transition-colors"
               >
-                <Briefcase className="w-4 h-4" />
-                <span>Let's Discuss Opportunities</span>
+                HIRE ME
               </a>
             </div>
           </div>
         )}
+
       </div>
     </header>
   );
