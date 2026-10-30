@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Code2, LayoutTemplate, Terminal, Zap, Layers } from 'lucide-react';
+import { Globe, Code2, LayoutTemplate, Terminal, Zap } from 'lucide-react';
 
 // Custom Paint Roller Icon matching reference screenshot
 function PaintRollerIcon({ className = "w-12 h-12" }) {
@@ -129,15 +129,11 @@ export default function Services() {
                 </p>
               </div>
 
-              {/* Card Bottom: Pill Button */}
+              {/* Card Bottom: Pill Button with Transparent Background & Cyan on Hover */}
               <div className="pt-8 mt-4 border-t border-slate-100">
                 <a
                   href="#contact"
-                  className={`inline-block w-full py-3 px-6 rounded-full font-extrabold text-sm tracking-wide transition-all duration-200 active:scale-95 ${
-                    service.featured
-                      ? 'bg-cyan-400 hover:bg-cyan-500 text-slate-900 shadow-md shadow-cyan-400/30 hover:shadow-lg hover:shadow-cyan-500/40'
-                      : 'bg-slate-100 hover:bg-cyan-500 hover:text-slate-900 text-slate-800 border border-slate-200 shadow-xs'
-                  }`}
+                  className="inline-block w-full py-3 px-6 rounded-full font-extrabold text-sm tracking-wide bg-transparent border-2 border-cyan-400 text-slate-800 hover:bg-cyan-400 hover:text-slate-900 hover:shadow-md hover:shadow-cyan-400/30 transition-all duration-200 active:scale-95"
                 >
                   Hire Me
                 </a>
