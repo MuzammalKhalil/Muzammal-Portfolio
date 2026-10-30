@@ -100,10 +100,10 @@ export default function Contact() {
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
               {/* Phone */}
               <a
-                href="tel:+923000000000"
-                aria-label="Direct Phone"
+                href={`tel:${personalInfo.phone || '030416252523'}`}
+                aria-label="Direct Phone: 030416252523"
                 className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-100 hover:bg-cyan-500 hover:text-white text-slate-700 flex items-center justify-center transition-all duration-200 shadow-2xs hover:shadow-md hover:shadow-cyan-500/25 active:scale-95"
-                title="Direct Phone / WhatsApp"
+                title={`Call: ${personalInfo.phone || '030416252523'}`}
               >
                 <PhoneCall className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>

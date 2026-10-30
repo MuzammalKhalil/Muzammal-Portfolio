@@ -4,6 +4,7 @@ export const personalInfo = {
   tagline: "5+ Years of Crafting High-Performance, Pixel-Perfect Web Experiences",
   bio: "Experienced Frontend Developer with over 5 years of proven track record delivering responsive web applications, modern React/Next.js interfaces, and scalable WordPress & CMS platforms. Dedicated to clean architecture, WCAG accessibility, and sub-second page performance.",
   email: "muzammalkhaliloffical@gmail.com",
+  phone: "030416252523",
   location: "Lahore, Pakistan (Open to Remote Worldwide)",
   status: "Available for Full-time Roles & Contracts",
   yearsExperience: "5+",
