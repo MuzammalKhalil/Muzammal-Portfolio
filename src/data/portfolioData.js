@@ -141,7 +141,7 @@ export const projectsData = [
     subtitle: "High-End Visual Portfolio & Client Acquisition Site",
     category: "CMS & Design",
     tag: "Client Showcase",
-    image: "https://images.unsplash.com/photo-1581291518655-9523c93269c4?auto=format&fit=crop&w=1200&q=80",
+    image: "/wix-studio-project.png",
     summary: "An ultra-refined portfolio site for an award-winning architecture studio, combining high-resolution image galleries with smooth micro-interactions.",
     problem: "High-resolution architectural renders were causing severe page weight issues and layout shifts on mobile devices.",
     role: "Web Specialist & UI Integrator — Designed visual layouts, optimized asset delivery pipelines, and ensured cross-browser consistency.",
