@@ -221,7 +221,7 @@ export const experienceData = [
     period: "3 Years",
     role: "Frontend Developer",
     company: "Techlohub",
-    location: "Lahore, Pakistan",
+    location: "Faisalabad, Pakistan",
     current: false,
     description: "Completed 3 full years of professional frontend engineering, delivering robust commercial websites, custom CMS themes, and interactive client applications.",
     highlights: [
@@ -231,16 +231,16 @@ export const experienceData = [
     ]
   },
   {
-    period: "2019 — 2021",
-    role: "Junior Web Developer & Freelance",
-    company: "Digital Agency & Client Engagements",
-    location: "Remote / Hybrid",
+    period: "2 Years (Internship)",
+    role: "Frontend Developer Intern",
+    company: "InfoTech",
+    location: "Pakistan",
     current: false,
-    description: "Commenced professional web development journey focusing on foundational web standards, responsive design, cross-browser styling, and client projects.",
+    description: "Completed a comprehensive 2-year web development internship, gaining strong hands-on experience in frontend engineering and professional software development workflows.",
     highlights: [
-      "Constructed 25+ responsive static websites and UI modules using HTML5, CSS3, and JavaScript.",
-      "Troubleshot CSS bugs, layout shifts, and mobile responsiveness across legacy web platforms.",
-      "Mastered Git version control and collaborative modern frontend workflows."
+      "Assisted senior engineering teams in building responsive web pages using HTML5, CSS3, and JavaScript.",
+      "Conducted cross-browser testing, UI bug fixing, and mobile optimization across client platforms.",
+      "Gained hands-on proficiency in Git version control, collaborative code reviews, and component-based styling."
     ]
   }
 ];
