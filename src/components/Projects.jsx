@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Eye, Sparkles } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { projectsData } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
 
@@ -47,7 +47,7 @@ export default function Projects() {
 
         {/* 3x2 Grid Matching Reference Screenshot */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
@@ -60,14 +60,8 @@ export default function Projects() {
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
 
-              {/* Cyan Gradient Overlay Matching Reference (Always on card 1, or on hover for all) */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-t from-cyan-600/95 via-cyan-400/90 to-cyan-300/80 p-6 flex flex-col items-center justify-center text-center text-white transition-all duration-300 ${
-                  index === 0
-                    ? 'opacity-95 group-hover:opacity-100'
-                    : 'opacity-0 group-hover:opacity-95'
-                }`}
-              >
+              {/* Cyan Gradient Overlay (Transparent by default, shows on hover for all cards) */}
+              <div className="absolute inset-0 bg-gradient-to-t from-cyan-600/95 via-cyan-400/90 to-cyan-300/85 p-6 flex flex-col items-center justify-center text-center text-white opacity-0 group-hover:opacity-95 transition-all duration-300 backdrop-blur-2xs">
                 {/* Overlay Title */}
                 <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight drop-shadow-sm mb-4">
                   {project.displayTitle || project.category}
@@ -84,14 +78,12 @@ export default function Projects() {
                 </p>
               </div>
 
-              {/* Inactive Bottom Badge when not hovered (Cards 2-6) */}
-              {index !== 0 && (
-                <div className="absolute bottom-3 left-3 group-hover:opacity-0 transition-opacity duration-200">
-                  <span className="px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-xs text-white text-xs font-bold border border-white/20">
-                    {project.displayTitle || project.category}
-                  </span>
-                </div>
-              )}
+              {/* Inactive Bottom Badge when not hovered */}
+              <div className="absolute bottom-3.5 left-3.5 group-hover:opacity-0 transition-opacity duration-200 pointer-events-none">
+                <span className="px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-xs text-white text-xs font-bold border border-white/20 shadow-sm">
+                  {project.displayTitle || project.category}
+                </span>
+              </div>
             </div>
           ))}
         </div>
