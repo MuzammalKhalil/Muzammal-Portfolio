@@ -62,15 +62,16 @@ export default function Hero() {
               I'm a professional web developer with strong skills in HTML, CSS, JavaScript, Tailwind, React, Next.js & WordPress. I have been working in this field for almost 5 years, and all of my projects are completed successfully with 100% client satisfaction.
             </p>
 
-            {/* Social Media Circular Icon Buttons */}
+            {/* Social Media Circular Icon Buttons with Real Links */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               {/* Facebook */}
               <a
-                href="https://facebook.com"
+                href={personalInfo.socials.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook Profile"
                 className="w-10 h-10 rounded-full border-2 border-cyan-400 bg-white/80 backdrop-blur-xs text-cyan-600 hover:bg-cyan-500 hover:text-white hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/30 flex items-center justify-center transition-all duration-200 active:scale-95"
+                title="Muzammal Khalil on Facebook"
               >
                 <FacebookIcon className="w-4 h-4 fill-current" />
               </a>
@@ -82,6 +83,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
                 className="w-10 h-10 rounded-full border-2 border-cyan-400 bg-white/80 backdrop-blur-xs text-cyan-600 hover:bg-cyan-500 hover:text-white hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/30 flex items-center justify-center transition-all duration-200 active:scale-95"
+                title="Muzammal Khalil on LinkedIn"
               >
                 <LinkedinIcon className="w-4 h-4 fill-current" />
               </a>
@@ -93,6 +95,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"
                 className="w-10 h-10 rounded-full border-2 border-cyan-400 bg-white/80 backdrop-blur-xs text-cyan-600 hover:bg-cyan-500 hover:text-white hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/30 flex items-center justify-center transition-all duration-200 active:scale-95"
+                title="Muzammal Khalil on GitHub"
               >
                 <GithubIcon className="w-4 h-4" />
               </a>
@@ -102,6 +105,7 @@ export default function Hero() {
                 href={`mailto:${personalInfo.email}`}
                 aria-label="Direct Email"
                 className="w-10 h-10 rounded-full border-2 border-cyan-400 bg-white/80 backdrop-blur-xs text-cyan-600 hover:bg-cyan-500 hover:text-white hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/30 flex items-center justify-center transition-all duration-200 active:scale-95"
+                title={`Email: ${personalInfo.email}`}
               >
                 <Mail className="w-4 h-4" />
               </a>
@@ -128,7 +132,7 @@ export default function Hero() {
 
           </div>
 
-          {/* Right Column: 3D Developer Character in Glowing Hexagon (Responsive Sized) */}
+          {/* Right Column: 3D Developer Character in Glowing Hexagon */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end pt-4 lg:pt-0">
             <div className="relative group max-w-full">
               

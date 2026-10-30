@@ -3,16 +3,17 @@ export const personalInfo = {
   title: "Senior Frontend Developer & Modern Web Specialist",
   tagline: "5+ Years of Crafting High-Performance, Pixel-Perfect Web Experiences",
   bio: "Experienced Frontend Developer with over 5 years of proven track record delivering responsive web applications, modern React/Next.js interfaces, and scalable WordPress & CMS platforms. Dedicated to clean architecture, WCAG accessibility, and sub-second page performance.",
-  email: "muzammal.dev@example.com", // User can replace with real email
+  email: "muzammalkhaliloffical@gmail.com",
   location: "Lahore, Pakistan (Open to Remote Worldwide)",
   status: "Available for Full-time Roles & Contracts",
   yearsExperience: "5+",
   projectsCompleted: "45+",
   clientSatisfaction: "99%",
   socials: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    email: "mailto:muzammal.dev@example.com",
+    github: "https://github.com/MuzammalKhalil",
+    linkedin: "https://www.linkedin.com/in/muzammal-khalil-189b19317/",
+    facebook: "https://www.facebook.com/muzammal.khalil.491578/",
+    email: "mailto:muzammalkhaliloffical@gmail.com",
   }
 };
 
@@ -80,7 +81,7 @@ export const projectsData = [
     outcome: "98% Lighthouse performance, instant page loads, and 100% mobile responsiveness across all devices.",
     technologies: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "Figma to Code"],
     demoUrl: "https://example.com/demo-web-design",
-    githubUrl: "https://github.com/example/web-design-template",
+    githubUrl: "https://github.com/MuzammalKhalil",
   },
   {
     id: "nextestate",
@@ -97,7 +98,7 @@ export const projectsData = [
     outcome: "Achieved a 98/100 Lighthouse score, 65% faster initial render compared to benchmark legacy portals, and smooth mobile usability across all breakpoints.",
     technologies: ["Next.js 14", "React 18", "Tailwind CSS", "TypeScript", "REST API"],
     demoUrl: "https://example.com/demo-nextestate",
-    githubUrl: "https://github.com/example/nextestate-portal",
+    githubUrl: "https://github.com/MuzammalKhalil",
   },
   {
     id: "saasmetric",
@@ -114,7 +115,7 @@ export const projectsData = [
     outcome: "Delivered a lightweight dashboard bundle under 180kb gzipped, ensuring zero lag during rapid range switching and high-density data review.",
     technologies: ["React.js", "Tailwind CSS", "Lucide React", "Context API", "Responsive UI"],
     demoUrl: "https://example.com/demo-saasmetric",
-    githubUrl: "https://github.com/example/saasmetric-dashboard",
+    githubUrl: "https://github.com/MuzammalKhalil",
   },
   {
     id: "medicare",
@@ -131,7 +132,7 @@ export const projectsData = [
     outcome: "Increased patient inquiry conversions by 45% within 3 months, zero plugin bloat, and achieved sub-1.2s page load speeds.",
     technologies: ["WordPress", "WPBakery", "Custom CSS3/PHP", "JavaScript", "Schema SEO", "Responsive Design"],
     demoUrl: "https://example.com/demo-apexcare",
-    githubUrl: "https://github.com/example/apexcare-theme",
+    githubUrl: "https://github.com/MuzammalKhalil",
   },
   {
     id: "luxestudio",
@@ -148,7 +149,7 @@ export const projectsData = [
     outcome: "Reduced overall page payload by 70% while maintaining crisp 4K visual fidelity for high-end clientele.",
     technologies: ["Wix Studio", "Custom CSS", "JavaScript", "Image Optimization", "Mobile-First Design"],
     demoUrl: "https://example.com/demo-luxestudio",
-    githubUrl: "https://github.com/example/luxestudio-web",
+    githubUrl: "https://github.com/MuzammalKhalil",
   },
   {
     id: "e-commerce-portal",
@@ -165,7 +166,7 @@ export const projectsData = [
     outcome: "Achieved 35% improvement in checkout completion and smooth 60fps animations.",
     technologies: ["React.js", "Next.js", "Tailwind CSS", "WooCommerce", "REST API"],
     demoUrl: "https://example.com/demo-shoppulse",
-    githubUrl: "https://github.com/example/shoppulse-store",
+    githubUrl: "https://github.com/MuzammalKhalil",
   }
 ];
 

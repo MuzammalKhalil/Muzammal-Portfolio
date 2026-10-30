@@ -142,12 +142,12 @@ export default function Contact() {
 
               {/* Facebook */}
               <a
-                href="https://facebook.com"
+                href={personalInfo.socials.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook Profile"
                 className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-100 hover:bg-cyan-500 hover:text-white text-slate-700 flex items-center justify-center transition-all duration-200 shadow-2xs hover:shadow-md hover:shadow-cyan-500/25 active:scale-95"
-                title="Facebook Profile"
+                title="Muzammal Khalil on Facebook"
               >
                 <FacebookIcon className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
               </a>
