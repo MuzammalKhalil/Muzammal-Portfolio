@@ -11,7 +11,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ['home', 'about', 'skills', 'projects', 'process', 'experience', 'contact'];
+      const sections = ['home', 'about', 'skills', 'services', 'projects', 'process', 'experience', 'contact'];
       const scrollPosition = window.scrollY + 120;
 
       for (const section of sections) {
@@ -34,6 +34,7 @@ export default function Navbar() {
   const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
+    { label: 'Services', href: '#services' },
     { label: 'Projects', href: '#projects' },
     { label: 'Process', href: '#process' },
     { label: 'Experience', href: '#experience' },
@@ -81,7 +82,7 @@ export default function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className={`px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-200 ${
+                  className={`px-3.5 py-1.5 text-sm font-medium rounded-full transition-all duration-200 ${
                     isActive
                       ? 'bg-white text-blue-600 shadow-sm'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/50'
@@ -143,4 +144,3 @@ export default function Navbar() {
     </header>
   );
 }
-
