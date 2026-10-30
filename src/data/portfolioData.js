@@ -205,39 +205,42 @@ export const workProcess = [
 
 export const experienceData = [
   {
-    period: "2022 — Present",
-    role: "Senior Frontend & Web Specialist",
-    company: "Freelance & Digital Agency Engagements",
-    location: "Remote / Hybrid",
-    description: "Spearheading end-to-end frontend development for high-growth businesses. Architecting modern web apps with React.js, Next.js, and custom enterprise WordPress/Wix solutions.",
-    highlights: [
-      "Built 20+ responsive web projects achieving average 95+ Google PageSpeed scores.",
-      "Migrated monolithic websites into modern headless and component-driven architectures.",
-      "Collaborated with international clients to deliver custom WordPress & WPBakery theme systems."
-    ]
-  },
-  {
-    period: "2020 — 2022",
+    period: "9 Months (Continuing)",
     role: "Frontend Developer",
-    company: "Creative Web Studio",
-    location: "On-site / Hybrid",
-    description: "Developed user interfaces, customer portals, and visual CMS sites for diverse retail, medical, and corporate clients.",
+    company: "Stratonally",
+    location: "Lahore, Pakistan",
+    current: true,
+    description: "Currently working as a Frontend Developer for the past 9 months, continuing to engineer high-performance web applications, responsive user interfaces, and scalable frontend architectures.",
     highlights: [
-      "Engineered pixel-perfect layouts from Figma designs using HTML5, CSS3/Sass, and JavaScript.",
-      "Customized WPBakery, Elementor, and custom WordPress post types for easy non-tech client edits.",
-      "Reduced client site loading times by up to 50% via asset optimization and script deferral."
+      "Actively developing responsive, modern web applications utilizing React.js, Next.js, and modern JavaScript.",
+      "Crafting clean, accessible, and high-performance UI components with Tailwind CSS.",
+      "Collaborating with cross-functional teams to deliver client deliverables on time with high visual fidelity."
     ]
   },
   {
-    period: "2019 — 2020",
-    role: "Junior Web Developer",
-    company: "Tech Solutions Hub",
+    period: "3 Years",
+    role: "Frontend Developer",
+    company: "Techlohub",
     location: "Lahore, Pakistan",
-    description: "Started professional career focusing on fundamental web standards, responsive web design, cross-browser compatibility, and WordPress maintenance.",
+    current: false,
+    description: "Completed 3 full years of professional frontend engineering, delivering robust commercial websites, custom CMS themes, and interactive client applications.",
     highlights: [
-      "Constructed 30+ responsive static landing pages and client sites.",
-      "Troubleshot CSS bugs, mobile view glitches, and plugin conflicts across legacy websites.",
-      "Mastered Git version control and modern web development workflows."
+      "Engineered 30+ responsive client websites, landing pages, and web apps with cross-browser compatibility.",
+      "Customized WordPress, WPBakery, and CMS platforms for seamless client-manageable solutions.",
+      "Optimized frontend load times by up to 50% via asset optimization, script deferral, and clean code standards."
+    ]
+  },
+  {
+    period: "2019 — 2021",
+    role: "Junior Web Developer & Freelance",
+    company: "Digital Agency & Client Engagements",
+    location: "Remote / Hybrid",
+    current: false,
+    description: "Commenced professional web development journey focusing on foundational web standards, responsive design, cross-browser styling, and client projects.",
+    highlights: [
+      "Constructed 25+ responsive static websites and UI modules using HTML5, CSS3, and JavaScript.",
+      "Troubleshot CSS bugs, layout shifts, and mobile responsiveness across legacy web platforms.",
+      "Mastered Git version control and collaborative modern frontend workflows."
     ]
   }
 ];
