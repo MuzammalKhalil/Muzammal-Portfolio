@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Code2 } from 'lucide-react';
+import { Globe, Code2, LayoutTemplate, Terminal, Zap, Layers } from 'lucide-react';
 
 // Custom Paint Roller Icon matching reference screenshot
 function PaintRollerIcon({ className = "w-12 h-12" }) {
@@ -23,24 +23,51 @@ function PaintRollerIcon({ className = "w-12 h-12" }) {
 export default function Services() {
   const services = [
     {
-      id: 'web-design',
-      title: 'Web Design',
-      icon: <Globe className="w-12 h-12 text-cyan-500" />,
-      description: "I am a professional web designer with 5+ years of experience. I have delivered more than 40+ websites for my clients. You can hire me to design your personal, business, or creative portfolio template. I guarantee 100% client satisfaction.",
-      featured: false,
-    },
-    {
-      id: 'web-development',
-      title: 'Web Development',
+      id: 'react-nextjs',
+      title: 'React.js & Next.js Development',
+      badge: 'Modern Web Apps',
       icon: <Code2 className="w-12 h-12 text-cyan-500" />,
-      description: "I am a modern frontend & full-stack web developer. I build high-performance web applications using React.js, Next.js, Tailwind CSS, and custom WordPress. Hire me to build your fast, responsive, and scalable website.",
+      description: "Building fast, dynamic single-page web applications using React.js and Next.js. State management, REST APIs, responsive layouts with Tailwind CSS, and sub-second performance.",
       featured: true, // Center highlighted card with cyan glowing border
     },
     {
-      id: 'graphic-design',
-      title: 'Graphic Design',
+      id: 'wordpress-wpbakery',
+      title: 'WordPress & WPBakery',
+      badge: 'CMS & Themes',
+      icon: <LayoutTemplate className="w-12 h-12 text-cyan-500" />,
+      description: "Custom WordPress website development, tailored WPBakery visual modules, Elementor setups, and WooCommerce integration. Delivering client-friendly sites that are easy to manage.",
+      featured: false,
+    },
+    {
+      id: 'wix-studio',
+      title: 'Wix & Wix Studio Design',
+      badge: 'Visual Builders',
+      icon: <Globe className="w-12 h-12 text-cyan-500" />,
+      description: "Crafting modern, high-converting business websites on Wix & Wix Studio. Custom responsive breakpoints, interactive animations, lead generation forms, and SEO optimization.",
+      featured: false,
+    },
+    {
+      id: 'frontend-core',
+      title: 'Frontend Development (HTML, CSS, JS)',
+      badge: 'Semantic & Clean',
+      icon: <Terminal className="w-12 h-12 text-cyan-500" />,
+      description: "Writing pristine, semantic HTML5, modern CSS3/SCSS, and vanilla ES6+ JavaScript. Clean code architectures adhering strictly to modern standards and cross-browser reliability.",
+      featured: false,
+    },
+    {
+      id: 'figma-to-code',
+      title: 'Figma to Pixel-Perfect Code',
+      badge: '100% Responsive',
       icon: <PaintRollerIcon className="w-12 h-12 text-cyan-500" />,
-      description: "I am an experienced UI/UX and visual designer. I create user-centric interfaces, Figma designs to code, logos, and digital branding assets. You can hire me to craft modern visuals that elevate your company's online presence.",
+      description: "Converting Figma, Adobe XD, and Photoshop designs into clean, responsive Tailwind CSS or CSS3 code. 100% mobile, tablet, and desktop responsive with zero layout shifts.",
+      featured: true, // Highlighted card
+    },
+    {
+      id: 'speed-maintenance',
+      title: 'Speed Optimization & Bug Fixing',
+      badge: 'Core Web Vitals',
+      icon: <Zap className="w-12 h-12 text-cyan-500" />,
+      description: "Optimizing website performance to achieve 90+ Google Lighthouse scores. Troubleshooting CSS/JS bugs, plugin conflicts, image compression, and continuous site maintenance.",
       featured: false,
     },
   ];
@@ -55,23 +82,26 @@ export default function Services() {
             My <span className="text-cyan-500 font-black">Services</span>
           </h2>
           <div className="w-12 h-1 bg-cyan-400 mx-auto mt-3 rounded-full" />
+          <p className="mt-4 text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
+            High-impact web engineering and design services backed by 5+ years of commercial expertise.
+          </p>
         </div>
 
-        {/* 3 Services Cards Grid matching reference */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+        {/* 6 Services Cards Grid in 3 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
           {services.map((service) => (
             <div
               key={service.id}
               className={`rounded-3xl p-8 sm:p-9 flex flex-col justify-between text-center transition-all duration-300 relative ${
                 service.featured
-                  ? 'bg-gradient-to-b from-cyan-50/40 via-white to-white border-2 border-cyan-400 shadow-xl shadow-cyan-500/15 ring-4 ring-cyan-100/60 md:-translate-y-2'
+                  ? 'bg-gradient-to-b from-cyan-50/40 via-white to-white border-2 border-cyan-400 shadow-xl shadow-cyan-500/15 ring-4 ring-cyan-100/60 lg:-translate-y-2'
                   : 'bg-white border border-slate-200/90 shadow-md hover:shadow-xl hover:border-cyan-300'
               }`}
             >
-              {/* Featured Badge for center card */}
+              {/* Highlight Tag */}
               {service.featured && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-cyan-400 text-slate-900 text-[11px] font-black uppercase tracking-wider shadow-sm">
-                  Most Popular
+                  {service.badge}
                 </div>
               )}
 
@@ -83,9 +113,16 @@ export default function Services() {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-black text-cyan-600 tracking-tight">
-                  {service.title}
-                </h3>
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-black text-cyan-600 tracking-tight">
+                    {service.title}
+                  </h3>
+                  {!service.featured && (
+                    <span className="inline-block mt-1 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                      {service.badge}
+                    </span>
+                  )}
+                </div>
 
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
                   {service.description}
