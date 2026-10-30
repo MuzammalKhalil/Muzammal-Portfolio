@@ -6,13 +6,22 @@
   html {
     scroll-behavior: smooth;
     color-scheme: light;
+    overflow-x: hidden;
+    width: 100%;
   }
   
   body {
     background-color: #F8FAFC;
     color: #1E293B;
     overflow-x: hidden;
-    overflow-y: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Prevent long text overflows on mobile */
+  h1, h2, h3, h4, p, span {
+    overflow-wrap: break-word;
   }
 }
 
@@ -22,7 +31,7 @@
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(-10px) rotate(1deg);
+    transform: translateY(-8px) rotate(1deg);
   }
 }
 
@@ -31,16 +40,16 @@
     transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translateY(10px) rotate(-1deg);
+    transform: translateY(8px) rotate(-1deg);
   }
 }
 
 @keyframes pulse-glow {
   0%, 100% {
-    filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.65)) drop-shadow(0 15px 30px rgba(6, 182, 212, 0.35));
+    filter: drop-shadow(0 0 20px rgba(6, 182, 212, 0.55)) drop-shadow(0 10px 20px rgba(6, 182, 212, 0.25));
   }
   50% {
-    filter: drop-shadow(0 0 40px rgba(6, 182, 212, 0.85)) drop-shadow(0 20px 40px rgba(6, 182, 212, 0.5));
+    filter: drop-shadow(0 0 35px rgba(6, 182, 212, 0.75)) drop-shadow(0 15px 30px rgba(6, 182, 212, 0.4));
   }
 }
 
@@ -73,6 +82,6 @@
 
 /* Subtle focus ring for accessibility */
 *:focus-visible {
-  outline: 2px solid #2563EB;
+  outline: 2px solid #06B6D4;
   outline-offset: 2px;
 }
